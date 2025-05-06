@@ -6,25 +6,45 @@
   <title>Aesculapium - The Doctor's Memecoin</title>
   <link rel="icon" href="https://i.postimg.cc/QtyNskgF/Chat-GPT-Image-May-6-2025-08-46-41-PM.png" type="image/png"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
   <style>
+    :root {
+      --primary-blue: #1a73e8;
+      --medical-red: #e63946;
+      --clean-white: #f8f9fa;
+    }
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background-color: #f0f4f8;
+      background-color: var(--clean-white);
       color: #333;
     }
     header {
-      background-color: #1e90ff;
+      background: linear-gradient(135deg, var(--primary-blue), #0d47a1);
       padding: 20px;
       text-align: center;
       color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: "⚕";
+      position: absolute;
+      font-size: 10rem;
+      opacity: 0.1;
+      transform: rotate(30deg);
+      right: -30px;
+      top: -30px;
     }
     header img {
       max-width: 120px;
       margin-bottom: 10px;
+      filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
     }
     h1 {
       margin: 0;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
     }
     .section {
       padding: 40px 20px;
@@ -33,69 +53,127 @@
     }
     .hero {
       text-align: center;
+      position: relative;
     }
     .hero p {
       font-size: 1.2em;
+      line-height: 1.6;
     }
     .button {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
       padding: 12px 24px;
-      background-color: #4caf50;
+      background-color: var(--medical-red);
       color: white;
       border-radius: 8px;
       text-decoration: none;
       margin-top: 20px;
+      transition: transform 0.3s ease;
+    }
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
     }
     .card {
       background-color: white;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      margin-bottom: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      border-left: 4px solid var(--primary-blue);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
     }
     footer {
       text-align: center;
-      padding: 20px;
-      background-color: #1e90ff;
+      padding: 30px;
+      background-color: var(--primary-blue);
       color: white;
+      margin-top: 40px;
+    }
+    .social-links {
+      margin: 20px 0;
+    }
+    .social-links a {
+      color: white;
+      margin: 0 15px;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+    .social-links a:hover {
+      color: var(--medical-red);
+    }
+    .medical-icon {
+      font-size: 2rem;
+      margin-right: 10px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      margin: 15px 0;
+      padding-left: 30px;
+      position: relative;
+    }
+    ul li::before {
+      content: "💊";
+      position: absolute;
+      left: 0;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="https://i.postimg.cc/mkgZWpFf/Chat-GPT-Image-May-6-2025-08-46-35-PM.png" alt="Aesculapium Logo"/>
+  <img src="https://i.postimg.cc/mkgZWpFf/Chat-GPT-Image-May-6-2025-08-46-35-PM.png" alt="Aesculapium Medical Coin Logo"/>
   <h1>Aesculapium</h1>
-  <p>The Doctor's Memecoin</p>
+  <p>The Prescription for Crypto Success</p>
 </header>
 
 <section class="section hero">
   <div class="card">
-    <h2>Why Aesculapium?</h2>
-    <p>Aesculapium is the first memecoin inspired by doctors, medicine, and healing. Whether you're a surgeon, a nurse, or just survived med school—this is your coin.</p>
+    <h2><i class="fas fa-stethoscope medical-icon"></i>Why Aesculapium?</h2>
+    <p>Aesculapium is the first memecoin prescribed by doctors, combining medical expertise with crypto innovation. Whether you're scrubbing in or HODLing, this is your community.</p>
   </div>
-  <a href="https://pump.fun/" target="_blank" class="button">Launch on Pump.fun</a>
+  <a href="https://pump.fun/" target="_blank" class="button">
+    <i class="fas fa-syringe"></i>
+    <span>Get Vaccinated on Pump.fun</span>
+  </a>
 </section>
 
 <section class="section">
   <div class="card">
-    <h2>Tokenomics</h2>
+    <h2><i class="fas fa-prescription-bottle medical-icon"></i>Tokenomics</h2>
     <ul>
-      <li><strong>Total Supply:</strong> 1,000,000,000</li>
-      <li><strong>Investor Vesting:</strong> 4 months gradual unlock</li>
-      <li><strong>LP & Community Rewards:</strong> 50%</li>
-      <li><strong>Dev Fund:</strong> 10%</li>
+      <li><strong>Total Supply:</strong> 1B Dose Units</li>
+      <li><strong>Investor Vesting:</strong> 4-month treatment plan</li>
+      <li><strong>LP & Community:</strong> 50% Distribution</li>
+      <li><strong>R&D Fund:</strong> 10% for future cures</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2>Medical Meme Culture</h2>
-    <p>Join the healthy dose of fun. Memes, scrubs, and stethoscopes—follow us on Twitter and Telegram as we build a community that cures boredom with blockchain.</p>
+    <h2><i class="fas fa-comment-medical medical-icon"></i>Medical Meme Culture</h2>
+    <p>Join our daily rounds of laughter. From OR banter to pharmacy memes - follow us for your daily dose of medical crypto humor.</p>
+    <div class="social-links">
+      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-telegram"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-discord"></i></a>
+    </div>
   </div>
 </section>
 
 <footer>
-  <p>© 2025 Aesculapium. Not financial advice. Just doctor memes.</p>
+  <div class="social-links">
+    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-telegram"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+  </div>
+  <p>© 2023 Aesculapium. FDA approval pending. Always do your own research.</p>
+  <p><small>*Not actual medical advice. Side effects may include mooning.</small></p>
 </footer>
 
 </body>
