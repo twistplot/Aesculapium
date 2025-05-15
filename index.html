@@ -1,180 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aesculapium - The Doctor's Memecoin</title>
-  <link rel="icon" href="https://i.postimg.cc/QtyNskgF/Chat-GPT-Image-May-6-2025-08-46-41-PM.png" type="image/png"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <meta charset="UTF-8">
+  <title>SOL Slot Machine</title>
   <style>
-    :root {
-      --primary-blue: #1a73e8;
-      --medical-red: #e63946;
-      --clean-white: #f8f9fa;
-    }
     body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: var(--clean-white);
-      color: #333;
-    }
-    header {
-      background: linear-gradient(135deg, var(--primary-blue), #0d47a1);
-      padding: 20px;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0b0c10;
+      color: #fff;
       text-align: center;
-      color: white;
-      position: relative;
-      overflow: hidden;
+      padding: 50px;
     }
-    header::before {
-      content: "⚕";
-      position: absolute;
-      font-size: 10rem;
-      opacity: 0.1;
-      transform: rotate(30deg);
-      right: -30px;
-      top: -30px;
-    }
-    header img {
-      max-width: 120px;
-      margin-bottom: 10px;
-      filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
-    }
+
     h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      color: #00ffa3;
     }
-    .section {
-      padding: 40px 20px;
-      max-width: 900px;
+
+    .slot-machine {
       margin: auto;
+      width: 300px;
+      border: 3px solid #00ffa3;
+      border-radius: 10px;
+      padding: 20px;
+      background: #1f2833;
     }
-    .hero {
-      text-align: center;
-      position: relative;
+
+    .slots {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
     }
-    .hero p {
-      font-size: 1.2em;
-      line-height: 1.6;
-    }
-    .button {
-      display: inline-flex;
+
+    .slot {
+      width: 80px;
+      height: 80px;
+      border: 2px solid #45a29e;
+      border-radius: 10px;
+      display: flex;
       align-items: center;
-      padding: 12px 24px;
-      background-color: var(--medical-red);
-      color: white;
+      justify-content: center;
+      background: #0b0c10;
+    }
+
+    .slot img {
+      width: 60px;
+      height: 60px;
+    }
+
+    button {
+      background: #00ffa3;
+      color: #0b0c10;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
       border-radius: 8px;
-      text-decoration: none;
-      margin-top: 20px;
-      transition: transform 0.3s ease;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
     }
-    .button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+
+    button:hover {
+      background: #00cc88;
     }
-    .card {
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 30px;
-      margin-bottom: 30px;
-      border-left: 4px solid var(--primary-blue);
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    footer {
-      text-align: center;
-      padding: 30px;
-      background-color: var(--primary-blue);
-      color: white;
-      margin-top: 40px;
-    }
-    .social-links {
-      margin: 20px 0;
-    }
-    .social-links a {
-      color: white;
-      margin: 0 15px;
-      font-size: 1.5rem;
-      transition: color 0.3s ease;
-    }
-    .social-links a:hover {
-      color: var(--medical-red);
-    }
-    .medical-icon {
-      font-size: 2rem;
-      margin-right: 10px;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    ul li {
-      margin: 15px 0;
-      padding-left: 30px;
-      position: relative;
-    }
-    ul li::before {
-      content: "💊";
-      position: absolute;
-      left: 0;
+
+    .result {
+      margin-top: 15px;
+      font-size: 18px;
     }
   </style>
 </head>
 <body>
-
-<header>
-  <img src="https://i.postimg.cc/mkgZWpFf/Chat-GPT-Image-May-6-2025-08-46-35-PM.png" alt="Aesculapium Medical Coin Logo"/>
-  <h1>Aesculapium</h1>
-  <p>The Prescription for Crypto Success</p>
-</header>
-
-<section class="section hero">
-  <div class="card">
-    <h2><i class="fas fa-stethoscope medical-icon"></i>Why Aesculapium?</h2>
-    <p>Aesculapium is the first memecoin prescribed by doctors, combining medical expertise with crypto innovation. Whether you're scrubbing in or HODLing, this is your community.</p>
-  </div>
-  <a href="https://pump.fun/" target="_blank" class="button">
-    <i class="fas fa-syringe"></i>
-    <span>Get Vaccinated on Pump.fun</span>
-  </a>
-</section>
-
-<section class="section">
-  <div class="card">
-    <h2><i class="fas fa-prescription-bottle medical-icon"></i>Tokenomics</h2>
-    <ul>
-      <li><strong>Total Supply:</strong> 1B Dose Units</li>
-      <li><strong>Investor Vesting:</strong> 4-month treatment plan</li>
-      <li><strong>LP & Community:</strong> 50% Distribution</li>
-      <li><strong>R&D Fund:</strong> 10% for future cures</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2><i class="fas fa-comment-medical medical-icon"></i>Medical Meme Culture</h2>
-    <p>Join our daily rounds of laughter. From OR banter to pharmacy memes - follow us for your daily dose of medical crypto humor.</p>
-    <div class="social-links">
-      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="#" target="_blank"><i class="fab fa-telegram"></i></a>
-      <a href="#" target="_blank"><i class="fab fa-discord"></i></a>
+  <h1>SOL Slot Machine 🎰</h1>
+  <div class="slot-machine">
+    <div class="slots">
+      <div class="slot"><img id="slot1" src="" alt=""></div>
+      <div class="slot"><img id="slot2" src="" alt=""></div>
+      <div class="slot"><img id="slot3" src="" alt=""></div>
     </div>
+    <button onclick="spin()">Spin</button>
+    <div class="result" id="result"></div>
   </div>
-</section>
 
-<footer>
-  <div class="social-links">
-    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-    <a href="#" target="_blank"><i class="fab fa-telegram"></i></a>
-    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-  </div>
-  <p>© 2023 Aesculapium. FDA approval pending. Always do your own research.</p>
-  <p><small>*Not actual medical advice. Side effects may include mooning.</small></p>
-</footer>
+  <script>
+    const symbols = [
+      {
+        name: "SOL",
+        image: "https://cryptologos.cc/logos/solana-sol-logo.png"
+      },
+      {
+        name: "Rocket",
+        image: "https://upload.wikimedia.org/wikipedia/commons/e/ef/Rocket_emoji_u1f680.svg"
+      },
+      {
+        name: "Diamond",
+        image: "https://upload.wikimedia.org/wikipedia/commons/5/57/Emoji_u1f48e.svg"
+      }
+    ];
 
+    function spin() {
+      const slot1 = symbols[Math.floor(Math.random() * symbols.length)];
+      const slot2 = symbols[Math.floor(Math.random() * symbols.length)];
+      const slot3 = symbols[Math.floor(Math.random() * symbols.length)];
+
+      document.getElementById("slot1").src = slot1.image;
+      document.getElementById("slot2").src = slot2.image;
+      document.getElementById("slot3").src = slot3.image;
+
+      if (slot1.name === slot2.name && slot2.name === slot3.name) {
+        document.getElementById("result").textContent = `🎉 Jackpot! 3 ${slot1.name}s!`;
+      } else if (slot1.name === slot2.name || slot2.name === slot3.name || slot1.name === slot3.name) {
+        document.getElementById("result").textContent = `😎 Nice! 2 matching symbols!`;
+      } else {
+        document.getElementById("result").textContent = `🙃 Try again!`;
+      }
+    }
+
+    // Initial spin to populate slots
+    spin();
+  </script>
 </body>
 </html>
