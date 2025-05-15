@@ -1,122 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>SOL Slot Machine</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aesculapium - The Doctor's Memecoin</title>
+  <link rel="icon" href="https://i.postimg.cc/QtyNskgF/Chat-GPT-Image-May-6-2025-08-46-41-PM.png" type="image/png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #0b0c10;
-      color: #fff;
-      text-align: center;
-      padding: 50px;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
     }
-
-    h1 {
-      color: #00ffa3;
-    }
-
-    .slot-machine {
-      margin: auto;
-      width: 300px;
-      border: 3px solid #00ffa3;
-      border-radius: 10px;
+    header {
+      background-color: #1e90ff;
       padding: 20px;
-      background: #1f2833;
+      text-align: center;
+      color: white;
     }
-
-    .slots {
-      display: flex;
-      justify-content: space-between;
+    header img {
+      max-width: 120px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 0;
+    }
+    .section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .hero {
+      text-align: center;
+    }
+    .hero p {
+      font-size: 1.2em;
+    }
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #4caf50;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 20px;
       margin-bottom: 20px;
     }
-
-    .slot {
-      width: 80px;
-      height: 80px;
-      border: 2px solid #45a29e;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #0b0c10;
-    }
-
-    .slot img {
-      width: 60px;
-      height: 60px;
-    }
-
-    button {
-      background: #00ffa3;
-      color: #0b0c10;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background: #00cc88;
-    }
-
-    .result {
-      margin-top: 15px;
-      font-size: 18px;
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1e90ff;
+      color: white;
     }
   </style>
 </head>
 <body>
-  <h1>SOL Slot Machine 🎰</h1>
-  <div class="slot-machine">
-    <div class="slots">
-      <div class="slot"><img id="slot1" src="" alt=""></div>
-      <div class="slot"><img id="slot2" src="" alt=""></div>
-      <div class="slot"><img id="slot3" src="" alt=""></div>
-    </div>
-    <button onclick="spin()">Spin</button>
-    <div class="result" id="result"></div>
+
+<header>
+  <img src="https://i.postimg.cc/mkgZWpFf/Chat-GPT-Image-May-6-2025-08-46-35-PM.png" alt="Aesculapium Logo"/>
+  <h1>Aesculapium</h1>
+  <p>The Doctor's Memecoin</p>
+</header>
+
+<section class="section hero">
+  <div class="card">
+    <h2>Why Aesculapium?</h2>
+    <p>Aesculapium is the first memecoin inspired by doctors, medicine, and healing. Whether you're a surgeon, a nurse, or just survived med school—this is your coin.</p>
+  </div>
+  <a href="https://pump.fun/" target="_blank" class="button">Launch on Pump.fun</a>
+</section>
+
+<section class="section">
+  <div class="card">
+    <h2>Tokenomics</h2>
+    <ul>
+      <li><strong>Total Supply:</strong> 1,000,000,000</li>
+      <li><strong>Investor Vesting:</strong> 4 months gradual unlock</li>
+      <li><strong>LP & Community Rewards:</strong> 50%</li>
+      <li><strong>Dev Fund:</strong> 10%</li>
+    </ul>
   </div>
 
-  <script>
-    const symbols = [
-      {
-        name: "SOL",
-        image: "https://cryptologos.cc/logos/solana-sol-logo.png"
-      },
-      {
-        name: "Rocket",
-        image: "https://upload.wikimedia.org/wikipedia/commons/e/ef/Rocket_emoji_u1f680.svg"
-      },
-      {
-        name: "Diamond",
-        image: "https://upload.wikimedia.org/wikipedia/commons/5/57/Emoji_u1f48e.svg"
-      }
-    ];
+  <div class="card">
+    <h2>Medical Meme Culture</h2>
+    <p>Join the healthy dose of fun. Memes, scrubs, and stethoscopes—follow us on Twitter and Telegram as we build a community that cures boredom with blockchain.</p>
+  </div>
+</section>
 
-    function spin() {
-      const slot1 = symbols[Math.floor(Math.random() * symbols.length)];
-      const slot2 = symbols[Math.floor(Math.random() * symbols.length)];
-      const slot3 = symbols[Math.floor(Math.random() * symbols.length)];
+<footer>
+  <p>© 2025 Aesculapium. Not financial advice. Just doctor memes.</p>
+</footer>
 
-      document.getElementById("slot1").src = slot1.image;
-      document.getElementById("slot2").src = slot2.image;
-      document.getElementById("slot3").src = slot3.image;
-
-      if (slot1.name === slot2.name && slot2.name === slot3.name) {
-        document.getElementById("result").textContent = `🎉 Jackpot! 3 ${slot1.name}s!`;
-      } else if (slot1.name === slot2.name || slot2.name === slot3.name || slot1.name === slot3.name) {
-        document.getElementById("result").textContent = `😎 Nice! 2 matching symbols!`;
-      } else {
-        document.getElementById("result").textContent = `🙃 Try again!`;
-      }
-    }
-
-    // Initial spin to populate slots
-    spin();
-  </script>
 </body>
 </html>
