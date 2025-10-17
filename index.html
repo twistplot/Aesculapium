@@ -119,12 +119,23 @@
       font-size: 1.1rem;
       transition: all 0.3s ease;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      margin: 10px;
     }
     
     .button:hover {
       background-color: #3d8b40;
       transform: translateY(-3px);
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+    
+    .button-outline {
+      background-color: transparent;
+      border: 2px solid white;
+    }
+    
+    .button-outline:hover {
+      background-color: white;
+      color: var(--primary);
     }
     
     .card-container {
@@ -279,18 +290,55 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
       background-color: var(--primary);
       color: white;
       border-radius: 50%;
       text-decoration: none;
       transition: all 0.3s ease;
+      font-size: 1.2rem;
     }
     
     .social-link:hover {
       background-color: var(--dark);
       transform: translateY(-3px);
+    }
+    
+    .links-section {
+      text-align: center;
+    }
+    
+    .links-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    
+    .link-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 25px;
+      width: 250px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .link-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .link-card i {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+    
+    .link-card h3 {
+      margin-bottom: 15px;
+      color: var(--dark);
     }
     
     footer {
@@ -355,6 +403,11 @@
       .hero h2 {
         font-size: 2rem;
       }
+      
+      .links-container {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
@@ -375,7 +428,8 @@
     <div class="hero-content">
       <h2>Prescribing Financial Wellness</h2>
       <p>Aesculapium is the first memecoin inspired by doctors, medicine, and healing. Whether you're a surgeon, a nurse, or just survived med school—this is your coin.</p>
-      <a href="https://pump.fun/" target="_blank" class="button">Launch on Pump.fun</a>
+      <a href="https://pump.fun/coin/XWCYZFHYafGdmMaDx5a1WizYieZWwL5Mfz3DJVPpump" target="_blank" class="button">Buy on Pump.fun</a>
+      <a href="#links" class="button button-outline">Join Community</a>
     </div>
   </div>
 </section>
@@ -520,18 +574,43 @@
   </div>
 </section>
 
-<section class="section">
+<section id="links" class="section links-section">
   <div class="container">
     <h2 class="section-title">Join Our Community</h2>
+    <p>Connect with us on our official channels to stay updated and participate in the Aesculapium community.</p>
+    <div class="links-container">
+      <div class="link-card">
+        <i class="fab fa-twitter"></i>
+        <h3>Twitter</h3>
+        <p>Follow us for the latest updates, memes, and announcements.</p>
+        <a href="https://x.com/Aesculapiumcoin?t=oIFTvaadSeyHxHB2SDaVeA&s=03" target="_blank" class="button">Follow</a>
+      </div>
+      <div class="link-card">
+        <i class="fab fa-telegram"></i>
+        <h3>Telegram</h3>
+        <p>Join our community chat for discussions and support.</p>
+        <a href="https://t.me/aesculapiumcryptocoin" target="_blank" class="button">Join</a>
+      </div>
+      <div class="link-card">
+        <i class="fas fa-coins"></i>
+        <h3>Pump.fun</h3>
+        <p>Trade Aesculapium tokens on Pump.fun.</p>
+        <a href="https://pump.fun/coin/XWCYZFHYafGdmMaDx5a1WizYieZWwL5Mfz3DJVPpump" target="_blank" class="button">Trade</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
     <div class="card">
       <div style="text-align: center;">
         <h3>Medical Meme Culture</h3>
         <p>Join the healthy dose of fun. Memes, scrubs, and stethoscopes—follow us on social media as we build a community that cures boredom with blockchain.</p>
         <div class="social-links">
-          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-reddit"></i></a>
+          <a href="https://x.com/Aesculapiumcoin?t=oIFTvaadSeyHxHB2SDaVeA&s=03" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="https://t.me/aesculapiumcryptocoin" target="_blank" class="social-link"><i class="fab fa-telegram"></i></a>
+          <a href="https://pump.fun/coin/XWCYZFHYafGdmMaDx5a1WizYieZWwL5Mfz3DJVPpump" target="_blank" class="social-link"><i class="fas fa-coins"></i></a>
         </div>
       </div>
     </div>
@@ -546,10 +625,10 @@
       <p>The Doctor's Memecoin</p>
       <div class="footer-links">
         <a href="#">Home</a>
-        <a href="#">Tokenomics</a>
-        <a href="#">Roadmap</a>
-        <a href="#">Team</a>
-        <a href="#">Contact</a>
+        <a href="#links">Community</a>
+        <a href="https://pump.fun/coin/XWCYZFHYafGdmMaDx5a1WizYieZWwL5Mfz3DJVPpump" target="_blank">Buy Now</a>
+        <a href="https://t.me/aesculapiumcryptocoin" target="_blank">Telegram</a>
+        <a href="https://x.com/Aesculapiumcoin?t=oIFTvaadSeyHxHB2SDaVeA&s=03" target="_blank">Twitter</a>
       </div>
       <p class="copyright">© 2025 Aesculapium. Not financial advice. Just doctor memes. Always do your own research.</p>
     </div>
