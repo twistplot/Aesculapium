@@ -5,97 +5,555 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aesculapium - The Doctor's Memecoin</title>
   <link rel="icon" href="https://i.postimg.cc/QtyNskgF/Chat-GPT-Image-May-6-2025-08-46-41-PM.png" type="image/png"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
+    :root {
+      --primary: #1e90ff;
+      --secondary: #4caf50;
+      --dark: #2c3e50;
+      --light: #f8f9fa;
+      --gray: #6c757d;
+    }
+    
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
       font-family: 'Roboto', sans-serif;
       background-color: #f0f4f8;
       color: #333;
+      line-height: 1.6;
     }
+    
     header {
-      background-color: #1e90ff;
-      padding: 20px;
+      background: linear-gradient(135deg, var(--primary), #0d6efd);
+      padding: 20px 0;
       text-align: center;
       color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
     header img {
       max-width: 120px;
       margin-bottom: 10px;
+      border-radius: 50%;
+      border: 3px solid white;
     }
+    
     h1 {
       margin: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
     }
+    
+    .tagline {
+      font-size: 1.2rem;
+      margin-top: 5px;
+      font-weight: 300;
+    }
+    
     .section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
+      padding: 60px 20px;
     }
-    .hero {
+    
+    .section-title {
       text-align: center;
+      margin-bottom: 40px;
+      color: var(--dark);
+      font-size: 2rem;
     }
+    
+    .hero {
+      background: linear-gradient(rgba(30, 144, 255, 0.9), rgba(30, 144, 255, 0.8)), url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero h2 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    
     .hero p {
-      font-size: 1.2em;
+      font-size: 1.3rem;
+      margin-bottom: 30px;
     }
+    
     .button {
       display: inline-block;
-      padding: 12px 24px;
-      background-color: #4caf50;
+      padding: 14px 32px;
+      background-color: var(--secondary);
       color: white;
-      border-radius: 8px;
+      border-radius: 50px;
       text-decoration: none;
-      margin-top: 20px;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
+    
+    .button:hover {
+      background-color: #3d8b40;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+    
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
     .card {
       background-color: white;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      margin-bottom: 20px;
+      padding: 30px;
+      transition: transform 0.3s ease;
     }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #1e90ff;
+    
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+    
+    .card ul {
+      padding-left: 20px;
+    }
+    
+    .card li {
+      margin-bottom: 10px;
+    }
+    
+    .stats {
+      background-color: var(--dark);
       color: white;
+      text-align: center;
+    }
+    
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+    
+    .stat-item {
+      padding: 20px;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--secondary);
+    }
+    
+    .roadmap {
+      background-color: var(--light);
+    }
+    
+    .roadmap-container {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .roadmap-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      background-color: var(--primary);
+      transform: translateX(-50%);
+    }
+    
+    .roadmap-item {
+      background-color: white;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 30px;
+      position: relative;
+      width: calc(50% - 30px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .roadmap-item:nth-child(odd) {
+      margin-left: auto;
+    }
+    
+    .roadmap-item::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: var(--primary);
+    }
+    
+    .roadmap-item:nth-child(odd)::before {
+      left: -40px;
+    }
+    
+    .roadmap-item:nth-child(even)::before {
+      right: -40px;
+    }
+    
+    .roadmap-item h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    
+    .team {
+      text-align: center;
+    }
+    
+    .team-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    .team-member {
+      background-color: white;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .team-member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid var(--primary);
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+      background-color: var(--dark);
+      transform: translateY(-3px);
+    }
+    
+    footer {
+      background: linear-gradient(135deg, var(--dark), #1a252f);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .footer-logo {
+      max-width: 80px;
+      margin-bottom: 15px;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+    
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--secondary);
+    }
+    
+    .copyright {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    @media (max-width: 768px) {
+      .roadmap-container::before {
+        left: 20px;
+      }
+      
+      .roadmap-item {
+        width: calc(100% - 60px);
+        margin-left: 60px !important;
+      }
+      
+      .roadmap-item::before {
+        left: -40px !important;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .hero h2 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="https://i.postimg.cc/mkgZWpFf/Chat-GPT-Image-May-6-2025-08-46-35-PM.png" alt="Aesculapium Logo"/>
-  <h1>Aesculapium</h1>
-  <p>The Doctor's Memecoin</p>
+  <div class="container">
+    <div class="header-content">
+      <img src="https://i.postimg.cc/mkgZWpFf/Chat-GPT-Image-May-6-2025-08-46-35-PM.png" alt="Aesculapium Logo"/>
+      <h1>Aesculapium</h1>
+      <p class="tagline">The Doctor's Memecoin</p>
+    </div>
+  </div>
 </header>
 
-<section class="section hero">
-  <div class="card">
-    <h2>Why Aesculapium?</h2>
-    <p>Aesculapium is the first memecoin inspired by doctors, medicine, and healing. Whether you're a surgeon, a nurse, or just survived med school—this is your coin.</p>
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h2>Prescribing Financial Wellness</h2>
+      <p>Aesculapium is the first memecoin inspired by doctors, medicine, and healing. Whether you're a surgeon, a nurse, or just survived med school—this is your coin.</p>
+      <a href="https://pump.fun/" target="_blank" class="button">Launch on Pump.fun</a>
+    </div>
   </div>
-  <a href="https://pump.fun/" target="_blank" class="button">Launch on Pump.fun</a>
 </section>
 
 <section class="section">
-  <div class="card">
-    <h2>Tokenomics</h2>
-    <ul>
-      <li><strong>Total Supply:</strong> 1,000,000,000</li>
-      <li><strong>Investor Vesting:</strong> 4 months gradual unlock</li>
-      <li><strong>LP & Community Rewards:</strong> 50%</li>
-      <li><strong>Dev Fund:</strong> 10%</li>
-    </ul>
+  <div class="container">
+    <h2 class="section-title">Why Aesculapium?</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3><i class="fas fa-stethoscope"></i> Medical Heritage</h3>
+        <p>Named after Asclepius, the Greek god of medicine, our coin honors the healing arts and those who practice them.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-users"></i> Community Focused</h3>
+        <p>Built by and for medical professionals and enthusiasts who understand the value of precision, care, and timing.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-heartbeat"></i> Healthy Growth</h3>
+        <p>Our tokenomics are designed for sustainable growth, just like a well-managed treatment plan.</p>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="card">
-    <h2>Medical Meme Culture</h2>
-    <p>Join the healthy dose of fun. Memes, scrubs, and stethoscopes—follow us on Twitter and Telegram as we build a community that cures boredom with blockchain.</p>
+<section class="section stats">
+  <div class="container">
+    <h2 class="section-title">Aesculapium in Numbers</h2>
+    <div class="stats-container">
+      <div class="stat-item">
+        <div class="stat-number">1B</div>
+        <div class="stat-label">Total Supply</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">50%</div>
+        <div class="stat-label">Community Allocation</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">4M</div>
+        <div class="stat-label">Vesting Period</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">10%</div>
+        <div class="stat-label">Development Fund</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Tokenomics</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3><i class="fas fa-chart-pie"></i> Distribution</h3>
+        <ul>
+          <li><strong>Total Supply:</strong> 1,000,000,000</li>
+          <li><strong>Investor Vesting:</strong> 4 months gradual unlock</li>
+          <li><strong>LP & Community Rewards:</strong> 50%</li>
+          <li><strong>Dev Fund:</strong> 10%</li>
+          <li><strong>Marketing & Partnerships:</strong> 15%</li>
+          <li><strong>Team & Advisors:</strong> 15%</li>
+          <li><strong>Reserve Fund:</strong> 10%</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-road"></i> Utility & Vision</h3>
+        <p>Aesculapium isn't just another memecoin. We're building:</p>
+        <ul>
+          <li>Medical education NFT collections</li>
+          <li>Healthcare professional networking platform</li>
+          <li>Charity initiatives for medical research</li>
+          <li>Medical conference sponsorships</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section roadmap">
+  <div class="container">
+    <h2 class="section-title">Roadmap</h2>
+    <div class="roadmap-container">
+      <div class="roadmap-item">
+        <h3>Q2 2025</h3>
+        <ul>
+          <li>Token launch on Pump.fun</li>
+          <li>Community building on Telegram & Twitter</li>
+          <li>First medical meme contest</li>
+        </ul>
+      </div>
+      <div class="roadmap-item">
+        <h3>Q3 2025</h3>
+        <ul>
+          <li>CEX listings</li>
+          <li>Partnerships with medical influencers</li>
+          <li>Aesculapium NFT collection launch</li>
+        </ul>
+      </div>
+      <div class="roadmap-item">
+        <h3>Q4 2025</h3>
+        <ul>
+          <li>Medical education platform development</li>
+          <li>First charitable donation to medical research</li>
+          <li>Community governance implementation</li>
+        </ul>
+      </div>
+      <div class="roadmap-item">
+        <h3>Q1 2026</h3>
+        <ul>
+          <li>Aesculapium merchandise store</li>
+          <li>Sponsorship of medical conferences</li>
+          <li>Expansion to additional blockchain networks</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section team">
+  <div class="container">
+    <h2 class="section-title">Our Team</h2>
+    <div class="team-container">
+      <div class="team-member">
+        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Dr. Alex Chen">
+        <h3>Dr. Alex Chen</h3>
+        <p>Cardiologist & Crypto Enthusiast</p>
+        <p>Leading the medical perspective and community engagement.</p>
+      </div>
+      <div class="team-member">
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Sarah Johnson">
+        <h3>Sarah Johnson</h3>
+        <p>Blockchain Developer</p>
+        <p>Technical lead with 5+ years in DeFi and tokenomics.</p>
+      </div>
+      <div class="team-member">
+        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Dr. Marcus Wright">
+        <h3>Dr. Marcus Wright</h3>
+        <p>Surgeon & Medical Educator</p>
+        <p>Driving the educational and charitable initiatives.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Join Our Community</h2>
+    <div class="card">
+      <div style="text-align: center;">
+        <h3>Medical Meme Culture</h3>
+        <p>Join the healthy dose of fun. Memes, scrubs, and stethoscopes—follow us on social media as we build a community that cures boredom with blockchain.</p>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-reddit"></i></a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <footer>
-  <p>© 2025 Aesculapium. Not financial advice. Just doctor memes.</p>
+  <div class="container">
+    <div class="footer-content">
+      <img src="https://i.postimg.cc/mkgZWpFf/Chat-GPT-Image-May-6-2025-08-46-35-PM.png" alt="Aesculapium Logo" class="footer-logo"/>
+      <h3>Aesculapium</h3>
+      <p>The Doctor's Memecoin</p>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#">Tokenomics</a>
+        <a href="#">Roadmap</a>
+        <a href="#">Team</a>
+        <a href="#">Contact</a>
+      </div>
+      <p class="copyright">© 2025 Aesculapium. Not financial advice. Just doctor memes. Always do your own research.</p>
+    </div>
+  </div>
 </footer>
 
 </body>
